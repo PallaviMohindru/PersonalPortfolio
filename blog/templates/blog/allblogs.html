@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="https://www.facebook.com/pallavi.mohindru" target="_blank">Facebook</a>
-            <a class="nav-item nav-link" href="#">Blogs</a>
+            <a class="nav-item nav-link" href="#" active >Blogs</a>
             <a class="nav-item nav-link" href="#">Resume</a>
           </div>
         </div>
@@ -62,35 +62,27 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1>Hello!! I am PallaviMohindru</h1>
-      <p class="lead text-muted">Here I presents a short Portfolio of mine to help you know me more. </p>
-      <p>
-        <img src="{% static 'Personal.jpeg' %}" alt="ImageNotFound" width="250" height="250">
-        </br>
-        <a href="mailto:friendshiphamesha17@gmail.com" class="btn btn-primary my-2">Email</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for jobs in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{ jobs.image.url }}" alt=" ImageNotFound" width = '100' height = '100'>
-            <div class="card-body">
-              <p class="card-text">{{ jobs.summary}}</p>
-            </div>
-          </div>
+<div class="container">
+  <h2 text="center" > All blogs</h2>
+  <hr>
+  <br>
+  <br>
+  <div class="row">
+    {% for blogs in blogs.all%}
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="{{ blogs.image.url }}" alt=" ImageNotFound" width = '100' height = '100'>
+        <div class="card-body">
+          <a href="#">{{ blogs.title}} </a>
+          <p class="card-text">{{ blogs.publish_date}}</p>
+          <p class="card-text">{{ blogs.body}}</p>
         </div>
-      {% endfor %}
+      </div>
     </div>
-  </div>
+  {% endfor %}
 </div>
+</div>
+
 
 </main>
 
