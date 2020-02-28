@@ -47,15 +47,15 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">PallaviMohindru</a>
+        <a class="navbar-brand" href="{% url 'home' %}">PallaviMohindru</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="https://www.facebook.com/pallavi.mohindru" target="_blank">Facebook</a>
-            <a class="nav-item nav-link" href="#" active >Blogs</a>
-            <a class="nav-item nav-link" href="#">Resume</a>
+            <a class="nav-item nav-link" href="{% url 'allblogs' %}" active>Blogs</a>
+            <a class="nav-item nav-link" href="{% static 'resume.docx' %}">Resume</a>
           </div>
         </div>
       </nav>
@@ -73,7 +73,7 @@
       <div class="card mb-4 shadow-sm">
         <img src="{{ blogs.image.url }}" alt=" ImageNotFound" width = '100' height = '100'>
         <div class="card-body">
-          <a href="#">{{ blogs.title}} </a>
+          <a href="{%url 'blogdetail' blogs.id %}">{{ blogs.title}} </a>
           <p class="card-text">{{ blogs.publish_date}}</p>
           <p class="card-text">{{ blogs.body}}</p>
         </div>
